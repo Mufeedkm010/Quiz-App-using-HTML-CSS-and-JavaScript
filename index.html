@@ -3,19 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Question</title>
+    <title>Quiz Questions</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="quiz-container">
-        <div class="question">In web design, what does CSS stand for?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)"><span class="option-label">A.</span> Counter Strike Source</button>
-            <button onclick="checkAnswer(this, false)"><span class="option-label">B.</span> Style Sheet</button>
-            <button onclick="checkAnswer(this, true)"><span class="option-label">C.</span> Cascading Style Sheet</button>
-            <button onclick="checkAnswer(this, false)"><span class="option-label">D.</span> Computer Style Sheet</button>
+        <div class="question-container active" id="question-1">
+            <div class="question"><b>In web design, what does CSS stand for?</b></div>
+            <div class="options">
+                <button onclick="checkAnswer(this, false, 3)"><span class="option-label">A.</span> Counter Strike Source</button>
+                <button onclick="checkAnswer(this, false, 3)"><span class="option-label">B.</span> Style Sheet</button>
+                <button onclick="checkAnswer(this, true, 3)"><span class="option-label">C.</span> Cascading Style Sheet</button>
+                <button onclick="checkAnswer(this, false, 3)"><span class="option-label">D.</span> Computer Style Sheet</button>
+            </div>
+            <div class="navigation-buttons">
+                <button class="next" onclick="navigateTo('question-2')">Next</button>
+            </div>
         </div>
+        <div class="question-container" id="question-2">
+            <div class="question"><b>What does HTML stand for?</b></div>
+            <div class="options">
+                <button onclick="checkAnswer(this, false, 2)"><span class="option-label">A.</span> Hyper Trainer Marking Language</button>
+                <button onclick="checkAnswer(this, true, 2)"><span class="option-label">B.</span> Hyper Text Markup Language</button>
+                <button onclick="checkAnswer(this, false, 2)"><span class="option-label">C.</span> Hyper Text Markup Leveler</button>
+                <button onclick="checkAnswer(this, false, 2)"><span class="option-label">D.</span> Hyper Text Marketing Language</button>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="navigateTo('question-1')">Prev</button>
+                <button class="next" onclick="navigateTo('question-3')">Next</button>
+            </div>
+        </div>
+        <div class="question-container" id="question-3">
+            <div class="question"><b>Which of the following is a JavaScript framework?</b></div>
+            <div class="options">
+                <button onclick="checkAnswer(this, false, 3)"><span class="option-label">A.</span> Django</button>
+                <button onclick="checkAnswer(this, false, 3)"><span class="option-label">B.</span> Laravel</button>
+                <button onclick="checkAnswer(this, true, 3)"><span class="option-label">C.</span> React</button>
+                <button onclick="checkAnswer(this, false, 3)"><span class="option-label">D.</span> Flask</button>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="navigateTo('question-2')">Prev</button>
+                <button class="next" onclick="navigateTo('question-4')">Next</button>
+            </div>
+        </div>
+        <div class="question-container" id="question-4">
+            <div class="question"><b>Which tag is used to create a hyperlink in HTML?</b></div>
+            <div class="options">
+                <button onclick="checkAnswer(this, false, 2)"><span class="option-label">A.</span> &lt;link&gt;</button>
+                <button onclick="checkAnswer(this, true, 2)"><span class="option-label">B.</span> &lt;a&gt;</button>
+                <button onclick="checkAnswer(this, false, 2)"><span class="option-label">C.</span> &lt;href&gt;</button>
+                <button onclick="checkAnswer(this, false, 2)"><span class="option-label">D.</span> &lt;url&gt;</button>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="navigateTo('question-3')">Prev</button>
+                <button class="next" onclick="navigateTo('question-5')">Next</button>
+            </div>
+        </div>
+        <div class="question-container" id="question-5">
+            <div class="question"><b>Which of the following is not a programming language?</b></div>
+            <div class="options">
+                <button onclick="checkAnswer(this, true, 1)"><span class="option-label">A.</span> HTML</button>
+                <button onclick="checkAnswer(this, false, 1)"><span class="option-label">B.</span> Python</button>
+                <button onclick="checkAnswer(this, false, 1)"><span class="option-label">C.</span> Java</button>
+                <button onclick="checkAnswer(this, false, 1)"><span class="option-label">D.</span> C++</button>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="navigateTo('question-4')">Prev</button>
+                <button class="end" onclick="endQuiz()">End</button>
+            </div>
+        </div>
+    </div>
+    <div id="end-message" class="end-message">
+        Quiz Completed! Well done!
+        <div id="score-message" class="score-message"></div>
     </div>
 </body>
 </html>

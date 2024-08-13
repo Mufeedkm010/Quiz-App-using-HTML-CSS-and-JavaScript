@@ -4,16 +4,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background-image: url(3d-abstract-dimension-hd-wallpaper-4927.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .quiz-container {
     text-align: left;
-    background-color: lightgray;
+    background-color: transparent;
     padding: 20px;
     width: 45%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 2px solid rgba(239, 240, 245, 0.3);
+    position: relative;
+    color: #f4f5fa;
 }
 
 .question {
@@ -30,14 +36,81 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #2646d4;
+    border: 1px solid #2646d4;
 }
 
-.correct {
-    background-color: green;
+.options button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.options button.correct {
+    background-color: rgba(0, 128, 0, 0.8);
     color: white;
 }
 
-.incorrect {
-    background-color: red;
+.options button.incorrect {
+    background-color: rgba(255, 0, 0, 0.8);
     color: white;
 }
+
+.question-container {
+    display: none;
+}
+
+.question-container.active {
+    display: block;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#question-1 .navigation-buttons {
+    justify-content: flex-end;
+}
+
+.navigation-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #070808;
+    border: 1px solid #2646d4;
+    background-color: rgb(116, 147, 172);
+    border-radius: 10px;
+}
+
+.navigation-buttons button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.end-message {
+    display: none;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none;
+    position: absolute;
+    color: #2646d4;
+}
+
+.end-message.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.score-message {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #2646d4;
+}
+
